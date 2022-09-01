@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api De Imágenes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&family=Secular+One&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="img">
+            <picture>
+                <source media="(min-width: 600px)" srcset="./images/hero-desktop.jpg">
+                <img src="./images/hero-mobile.jpg" alt="">
+            </picture>
+            <div class="title d-flex">
+                <h1>Galería de imágenes</h1>
+                <p>Descarga tus imágenes favoritas</p>
+            </div>
+        </div>
+    </header>
+    <nav class="navegacion">
+        <ul role='list' class="d-flex list-menu">
+            <li class="list__item-fotos item-menu"><a href="#" id="fotos" onclick="getFotos()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11.1l2-2 5.5 5.5 3.5-3.5 3 3V5H5v6.1zM4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm11.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg> Todas las fotos</a></li>
+            <li class="list__item-favoritos item-menu"><a href="#" id="fovoritos" onclick="fotosFavoritasLocal('favoritos')">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"/></svg>
+                Fovoritos (<span class="counter" id="counter">0</span>)</a></li>
+                <li>
+                    <select class="select-css" name="select" id="select">
+                        <optgroup label="Pages 1 - 5">
+                            <option value="1" selected>Page 1</option>
+                            <option value="2">Page 2</option>
+                            <option value="3">Page 3</option>
+                            <option value="4">Page 4</option>
+                            <option value="5">Page 5</option>
+                        </optgroup>
+                        <optgroup label="Pages 6 - 10">
+                            <option value="6">Page 6</option>
+                            <option value="7">Page 7</option>
+                            <option value="8">Page 8</option>
+                            <option value="9">Page 9</option>
+                            <option value="10">Page 10</option>
+                        </optgroup>
+                        <optgroup label="Pages 11 - 15">
+                            <option value="11">Page 11</option>
+                            <option value="12">Page 12</option>
+                            <option value="13">Page 13</option>
+                            <option value="14">Page 14</option>
+                            <option value="15">Page 15</option>
+                        </optgroup>
+                    </select>
+                </li>
+        </ul>
+    </nav>
+    <!-- Main -->
+    <main class="container">
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="title-grid d-flex">
+
+            <h2 id="title-text">Todas las fotos</h2>
+
+        </div>
+        <div class="d-grid list-grid" id="grid">
+
+        </div>
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
